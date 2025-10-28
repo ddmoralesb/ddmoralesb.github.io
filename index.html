@@ -237,7 +237,11 @@
                 // Filter out private repos and sort by stars/updated
                 const publicRepos = repos
                     .filter(repo => !repo.private)
-                    .sort((a, b) => b.stargazers_count - a.stargazers_count || new Date(b.updated_at) - new Date(a.updated_at));
+                    .sort((a, b) => {
+                        const starDiff = b.stargazers_count - a.stargazers_count;
+                        if (starDiff !== 0) return starDiff;
+                        return new Date(b.updated_at) - new Date(a.updated_at);
+                    });
 
                 if (publicRepos.length === 0) {
                     projectsContainer.innerHTML = '<p class="error">No hay repositorios públicos disponibles.</p>';
