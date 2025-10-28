@@ -1,8 +1,288 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Daniel Morales - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00ff88 0%, #00aaff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            color: #00ff88;
+            border-bottom: 2px solid #00aaff;
+            padding-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #00aaff;
+            margin-bottom: 30px;
+        }
+
+        .about-section {
+            background-color: #0a0a0a;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #1a1a1a;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #00ff88 0%, #00aaff 100%);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.4);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background-color: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+        }
+
+        .project-card h3 {
+            color: #00aaff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: #cccccc;
+            margin-bottom: 15px;
+            min-height: 60px;
+        }
+
+        .project-card a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #00ff88;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .project-card a:hover {
+            background-color: #00aaff;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #00ff88;
+            font-size: 1.2rem;
+        }
+
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #ff4444;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #1a1a1a;
+            color: #666666;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-links a {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-Hola mundo
-  <a href="https://github.com/ddmoralesb/vacaciones">Vacaciones</a>
+    <header>
+        <h1>David Daniel Morales</h1>
+        <p class="subtitle">Desarrollador de Software</p>
+    </header>
+
+    <div class="container">
+        <section class="about-section">
+            <h2>Acerca de mí</h2>
+            <p>
+                Bienvenido a mi portafolio. Soy un desarrollador apasionado por crear soluciones 
+                tecnológicas innovadoras. Aquí encontrarás mis proyectos y formas de contactarme.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/ddmoralesb" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/ddmoralesb" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://twitter.com/ddmoralesb" target="_blank" rel="noopener noreferrer">Twitter</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Proyectos</h2>
+            <div id="projects-container" class="projects-grid">
+                <div class="loading">Cargando proyectos...</div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 David Daniel Morales. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Fetch GitHub repositories
+        async function fetchGitHubRepos() {
+            const username = 'ddmoralesb';
+            const projectsContainer = document.getElementById('projects-container');
+
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+                
+                if (!response.ok) {
+                    throw new Error('Error al cargar los repositorios');
+                }
+
+                const repos = await response.json();
+                
+                // Filter out private repos and sort by stars/updated
+                const publicRepos = repos
+                    .filter(repo => !repo.private)
+                    .sort((a, b) => {
+                        const starDiff = b.stargazers_count - a.stargazers_count;
+                        if (starDiff !== 0) return starDiff;
+                        return new Date(b.updated_at) - new Date(a.updated_at);
+                    });
+
+                if (publicRepos.length === 0) {
+                    projectsContainer.innerHTML = '<p class="error">No hay repositorios públicos disponibles.</p>';
+                    return;
+                }
+
+                // Clear loading message
+                projectsContainer.innerHTML = '';
+
+                // Create project cards
+                publicRepos.forEach(repo => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+
+                    const title = document.createElement('h3');
+                    title.textContent = repo.name;
+
+                    const description = document.createElement('p');
+                    description.textContent = repo.description || 'Sin descripción';
+
+                    const link = document.createElement('a');
+                    link.href = repo.html_url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.textContent = 'Ver en GitHub';
+
+                    card.appendChild(title);
+                    card.appendChild(description);
+                    card.appendChild(link);
+
+                    projectsContainer.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error('Error:', error);
+                projectsContainer.innerHTML = `<div class="error">Error al cargar los proyectos: ${error.message}</div>`;
+            }
+        }
+
+        // Load repos when page loads
+        document.addEventListener('DOMContentLoaded', fetchGitHubRepos);
+    </script>
 </body>
 </html>
